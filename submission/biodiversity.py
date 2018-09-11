@@ -2,10 +2,9 @@ import codecademylib
 import pandas as pd
 from matplotlib import pyplot as plt
 
-# Loading the Data
 species = pd.read_csv('species_info.csv')
 
-# print species.head()
+# print species.head()  initial check of the data, commented out
 
 species_count = species.scientific_name.nunique()
 
@@ -53,7 +52,6 @@ category_pivot['percent_protected'] = category_pivot.protected / (category_pivot
 
 print category_pivot
 
-
 # Signifigance testing
 
 from scipy.stats import chi2_contingency
@@ -64,7 +62,6 @@ t1,pval,t3,t4 = chi2_contingency(contingency)
 contingency2 = [[30, 146],
                [5, 73]]
 w1,pval_reptile_mammal,w3,w4 = chi2_contingency(contingency2)
-
 
 # Sheep foot and mouth
 
